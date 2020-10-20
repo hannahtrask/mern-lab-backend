@@ -5,7 +5,7 @@ const Plant = require('../models/plants.js')
 const db = mongoose.connection
 
 
-//SEED route
+//SEED route --works in dev
 const plantSeed = require('../db/seedData.json')
 router.get('/seed', async (req, res) => {
     try{
