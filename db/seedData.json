@@ -1,0 +1,20 @@
+[
+    {
+    "name": "carrot",
+    "flower": false,
+    "vegetable": true,
+    "edible": true
+    },
+    {
+    "name": "lavender",
+    "flower": true,
+    "vegetable": false,
+    "edible": true
+    },
+    {
+    "name": "palm tree",
+    "flower": false,
+    "vegetable": false,
+    "edible": true
+    }
+]
