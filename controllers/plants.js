@@ -5,14 +5,18 @@ const Plant = require('../models/plants.js')
 const db = mongoose.connection
 
 
-//SEED
 //SEED route
 const plantSeed = require('../db/seedData.json')
 router.get('/seed', async (req, res) => {
-    await Plant.deleteMany({})
-    const plants = await Fruit.insertMany(plantSeed)
-    res.json( {status: 200, data: plants})
-    db.close()
+    try{
+        await Plant.deleteMany({})
+        const plants = await Plant.insertMany(plantSeed)
+        res.json( {status: 200, data: plants})
+        db.close()
+    }
+    catch(err) {
+        res.status(400).json({err})
+    }
 })
 
 
