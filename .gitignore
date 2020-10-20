@@ -2,6 +2,7 @@
 # Created by https://www.gitignore.io/api/macos,linux
 /node_modules
 .env
+mongouri.txt
 
 ### macOS ###
 *.DS_Store
