@@ -3,22 +3,22 @@ const express = require('express')
 const app = express()
 //DOTENV
 require('dotenv').config();
-
-const { PORT = 3000, NODE_ENV = 'development' } = process.env;
-
+//PORT and DEVELOPMENT
+const { PORT = 4000, NODE_ENV = 'development' } = process.env;
+//MONGO CONNECTION
+const mongoose = ('./db/connection.js')
 //CORS
 const cors = require('cors')
-// //configure this later
-// const corsOptions = require('./configs/cors.js');
-
+const corsOptions = require('./configs/cors.js');
 //MORGAN
 const morgan = require('morgan')
+
 
 //MIDDLEWARE
 NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors());
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 app.use(morgan('dev'))
-
 
 //ROUTES
 //default route test
