@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
     res.json({message:"this is the default route, express up and running"})
 })
 
+//CONTROLLERS
+//plants
+const plantController = require('./controllers/plants')
+app.use('/plants', plantController)
+
 
 //LISTENER
 app.listen(PORT, ()=>{
