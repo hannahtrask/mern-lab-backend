@@ -34,6 +34,10 @@ app.get('/', (req, res) => {
 const plantController = require('./controllers/plants')
 app.use('/plants', plantController)
 
+//gardens
+const gardenController = require('./controllers/gardens')
+app.use('/gardens', gardenController)
+
 
 //LISTENER
 app.listen(PORT, ()=>{
