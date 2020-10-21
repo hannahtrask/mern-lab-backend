@@ -12,7 +12,7 @@ router.get('/seed', async (req, res) => {
         await Plant.deleteMany({})
         const plants = await Plant.insertMany(plantSeed)
         res.json( {status: 200, data: plants})
-        db.close()
+        // db.close()
     }
     catch(err) {
         res.status(400).json({err})
