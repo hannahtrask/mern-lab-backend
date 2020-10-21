@@ -5,6 +5,21 @@ const Garden = require('../models/gardens')
 const Plant = require('../models/plants')
 const db = mongoose.connection
 
+
+//SEED ROUTE — GET 
+const gardenSeed = require('../db/gardenseedData.json')
+router.get('/seed', async (req, res) => {
+    try{
+        await Garden.deleteMany({})
+        const gardens = await Garden.insertMany(gardenSeed)
+        res.json( {status: 200, data: gardens})
+        // db.close()
+    }
+    catch(err) {
+        res.status(400).json({err})
+    }
+})
+
 //INDEX — GET --works in dev
 //returns all gardens, populated with fruit
 router.get('/', async (req, res) => {
