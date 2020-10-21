@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const gardenSchema = new Schema({
     name: { type: String, required: true },
+    image: String,
     plants: [
         {
             ref: 'Plant',
