@@ -35,7 +35,7 @@ const plantController = require('./controllers/plants')
 app.use('/plants', plantController)
 
 //gardens
-const gardenController = require('./controllers/gardens')
+const gardenController = require('./controllers/gardens');
 app.use('/gardens', gardenController)
 
 
