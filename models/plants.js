@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 const plantSchema = new Schema ({
     name: { type:String, required: true },
-    flower: { type:Boolean, required: true },
-    vegetable: { type:Boolean, required: true },
-    edible: { type:Boolean, required:true }
+    flower: Boolean,
+    vegetable: Boolean,
+    edible: Boolean
 })
 
 const Plant = mongoose.model('Plant', plantSchema)
