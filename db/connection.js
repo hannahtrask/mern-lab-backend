@@ -1,7 +1,7 @@
 //importing environmental variables
 require('dotenv').config();
 const mongoose = require('mongoose');
-const mongoDBURI = 'mongodb://localhost:27017/' + 'gardens'
+const mongoDBURI = 'mongodb://localhost:27017/' + 'gardenapi'
 const config = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify:false }
 mongoose.connect(mongoDBURI, config);
 
