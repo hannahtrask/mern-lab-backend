@@ -23,11 +23,6 @@ app.use(morgan('dev'));
 app.use(cors())
 
 
-//ROUTES
-//default route test
-app.get('/', (req, res) => {
-    res.json({message:"this is the default route, express up and running"})
-})
 
 //CONTROLLERS
 //plants
@@ -38,6 +33,12 @@ app.use('/plants', plantController)
 const gardenController = require('./controllers/gardens');
 app.use('/gardens', gardenController)
 
+
+//ROUTES
+//default route test
+app.get('/', (req, res) => {
+    res.json({message:"this is the default route, express up and running"})
+})
 
 //LISTENER
 app.listen(PORT, ()=>{
